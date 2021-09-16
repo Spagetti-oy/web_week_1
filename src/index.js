@@ -1,26 +1,36 @@
 //Miikka Muinonen web_applications 16.9.2021
 import "./styles.css";
 
-const addCommentButton = document.getElementById("add-comment");
+if (document.readyState !== "loading") {
+  initializeCode();
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeCode();
+  });
+}
 
-addCommentButton.addEventListener("click", function () {
-  const commentText = document.getElementById("comment-text").value;
-  const commentArea = document.getElementById("comment-area");
+function initializeCode() {
+  const addCommentButton = document.getElementById("add-comment");
 
-  let newListItem = document.createElement("li");
-  newListItem.innerHTML = commentText;
+  addCommentButton.addEventListener("click", function () {
+    const commentText = document.getElementById("comment-text").value;
+    const commentArea = document.getElementById("comment-area");
 
-  commentArea.appendChild(newListItem);
-});
+    let newListItem = document.createElement("li");
+    newListItem.innerHTML = commentText;
 
-const removeCommentsButton = document.getElementById("remove-comments");
+    commentArea.appendChild(newListItem);
+  });
 
-removeCommentsButton.addEventListener("click", function () {
-  const commentArea = document.getElementById("comment-area");
+  const removeCommentsButton = document.getElementById("remove-comments");
 
-  if (confirm("Are you sure you want to delete all comments?")) {
-    commentArea.innerHTML = "";
-    //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-  } else {
-  }
-});
+  removeCommentsButton.addEventListener("click", function () {
+    const commentArea = document.getElementById("comment-area");
+
+    if (confirm("Are you sure you want to delete all comments?")) {
+      commentArea.innerHTML = "";
+      //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+    } else {
+    }
+  });
+}
