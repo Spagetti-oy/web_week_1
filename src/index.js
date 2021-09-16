@@ -1,10 +1,26 @@
+//Miikka Muinonen web_applications 16.9.2021
 import "./styles.css";
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+const addCommentButton = document.getElementById("add-comment");
+
+addCommentButton.addEventListener("click", function () {
+  const commentText = document.getElementById("comment-text").value;
+  const commentArea = document.getElementById("comment-area");
+
+  let newListItem = document.createElement("li");
+  newListItem.innerHTML = commentText;
+
+  commentArea.appendChild(newListItem);
+});
+
+const removeCommentsButton = document.getElementById("remove-comments");
+
+removeCommentsButton.addEventListener("click", function () {
+  const commentArea = document.getElementById("comment-area");
+
+  if (confirm("Are you sure you want to delete all comments?")) {
+    commentArea.innerHTML = "";
+    //https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+  } else {
+  }
+});
