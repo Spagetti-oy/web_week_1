@@ -1,8 +1,10 @@
+<!--Miikka Muinonen web_applications 16.9.2021-->
 <!DOCTYPE html>
 <html>
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
+    <script src="src/index.js"></script>
   </head>
 
   <body>
@@ -35,13 +37,20 @@
           <td>25,50€</td>
         </tr>
       </tbody>
-    
+    </table>
 
-      
-    <!--	<div id="app"></div>
+    <div>
+      <textarea
+        id="comment-text"
+        rows="4"
+        cols="50"
+        placeholder="add comment"
+      ></textarea>
+      <br />
+      <button id="add-comment">add comment</button>
+      <button id="remove-comments">remove comment(s)</button>
+    </div>
 
-	  <script src="src/index.js">
-	  </script>
-    -->
+    <ul id="comment-area"></ul>
   </body>
 </html>
