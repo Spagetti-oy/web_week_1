@@ -14,9 +14,12 @@ function initializeCode() {
 
   addCommentButton.addEventListener("click", function () {
     const commentText = document.getElementById("comment-text").value;
+    /*const chooseRating = document.getElementById("stars");
+    var starAmount = chooseRating.options[chooseRating.selectedIndex].value;
+    */
     const commentArea = document.getElementById("comment-area");
 
-    let newListItem = document.createElement("li");
+    let newListItem = document.createElement("div");
     newListItem.innerHTML = commentText;
 
     commentArea.appendChild(newListItem);
