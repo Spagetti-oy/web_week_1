@@ -8,49 +8,53 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <div class="menu-layout">
+      <h1>Hello World!</h1>
 
-    <table>
-      <tbody>
-        <tr>
-          <th><strong>Name</strong></th>
-          <th><strong>Price</strong></th>
-        </tr>
-        <tr>
-          <td>Meal 1</td>
-          <td>6,99€</td>
-        </tr>
-        <tr>
-          <td>Meal 2</td>
-          <td>14,89€</td>
-        </tr>
-        <tr>
-          <td>Meal 3</td>
-          <td>9,99€</td>
-        </tr>
-        <tr>
-          <td>Meal 4</td>
-          <td>19,99€</td>
-        </tr>
-        <tr>
-          <td>Meal 5</td>
-          <td>25,50€</td>
-        </tr>
-      </tbody>
-    </table>
+      <table id="menu-table">
+        <tbody>
+          <tr>
+            <th class="header"><strong>Name</strong></th>
+           <th class="header"><strong>Price</strong></th>
+          </tr>
+          <tr>
+            <td>Meal 1</td>
+            <td>6,99€</td>
+         </tr>
+          <tr>
+            <td>Meal 2</td>
+            <td>14,89€</td>
+          </tr>
+          <tr>
+            <td>Meal 3</td>
+            <td>9,99€</td>
+          </tr>
+          <tr>
+            <td>Meal 4</td>
+            <td>19,99€</td>
+          </tr>
+          <tr>
+            <td>Meal 5</td>
+            <td>25,50€</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div>
+        <h3 class="header">Reviews<h3>
+        <textarea
+          id="comment-text"
+          rows="4"
+          cols="50"
+          placeholder="add comment"
+        ></textarea>
+        <br />
+        <button id="add-comment">add comment</button>
+        <button id="remove-comments">remove comment(s)</button>
+      </div>
 
-    <div>
-      <textarea
-        id="comment-text"
-        rows="4"
-        cols="50"
-        placeholder="add comment"
-      ></textarea>
-      <br />
-      <button id="add-comment">add comment</button>
-      <button id="remove-comments">remove comment(s)</button>
+      <ul id="comment-area"></ul>
+
     </div>
-
-    <ul id="comment-area"></ul>
   </body>
 </html>
