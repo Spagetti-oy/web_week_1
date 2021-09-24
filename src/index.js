@@ -29,12 +29,17 @@ function initializeCode() {
 
     let commentRating = document.createElement("div");
     commentRating.setAttribute("class", "comment-rating");
-    commentRating.innerHTML = starAmount;
+
+    if (starAmount == 1) {
+      commentRating.innerHTML = starAmount + " Star";
+    } else {
+      commentRating.innerHTML = starAmount + " Stars";
+    }
 
     commentArea.appendChild(comment);
     const commentDivArea = document.getElementById("commentDiv");
-    commentDivArea.appendChild(commentTextArea);
     commentDivArea.appendChild(commentRating);
+    commentDivArea.appendChild(commentTextArea);
   });
 
   const removeCommentsButton = document.getElementById("remove-comments");
