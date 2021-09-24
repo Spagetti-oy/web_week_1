@@ -14,12 +14,27 @@ function initializeCode() {
 
   addCommentButton.addEventListener("click", function () {
     const commentText = document.getElementById("comment-text").value;
+    const chooseRating = document.getElementById("stars");
+    var starAmount = chooseRating.options[chooseRating.selectedIndex].value;
+
     const commentArea = document.getElementById("comment-area");
 
-    let newListItem = document.createElement("li");
-    newListItem.innerHTML = commentText;
+    let comment = document.createElement("div");
+    comment.setAttribute("class", "comment");
+    comment.setAttribute("id", "commentDiv");
 
-    commentArea.appendChild(newListItem);
+    let commentTextArea = document.createElement("div");
+    commentTextArea.setAttribute("class", "comment-text");
+    commentTextArea.innerHTML = commentText;
+
+    let commentRating = document.createElement("div");
+    commentRating.setAttribute("class", "comment-rating");
+    commentRating.innerHTML = starAmount;
+
+    commentArea.appendChild(comment);
+    const commentDivArea = document.getElementById("commentDiv");
+    commentDivArea.appendChild(commentTextArea);
+    commentDivArea.appendChild(commentRating);
   });
 
   const removeCommentsButton = document.getElementById("remove-comments");
